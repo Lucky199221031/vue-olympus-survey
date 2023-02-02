@@ -181,6 +181,32 @@ h3 {
   color: #FFFFFF;
   width: 11em;
 }
+.comingsoon .content__hero .input_radio{
+  height: 1rem;
+  display: flex;
+  justify-items: left;
+  margin: 0.5rem;
+  width: 1rem !important;
+}
+
+.comingsoon .content__hero .input_group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
+
+ .comingsoon .content__hero .input_checkbox {
+  display: flex;
+  justify-items: left;
+  margin: 0.5rem;
+  width: 1rem !important;
+}
+
+.comingsoon .content__hero .text_style {
+  font-size: 2em;
+  font-weight: lighter;
+  color: #FFFFFF;
+}
 
 .comingsoon .content__hero input::placeholder {
   font-family: commuters-sans,sans-serif;

@@ -120,55 +120,62 @@
                     </div>
                     
                     <div class="content__hero" v-if="survey.type=='radiogroup'">
-                      <div v-for="choice in survey.choices">
+                      <div class="input_group"   v-for="choice in survey.choices">
                         <input
+                          class="input_radio"
                           type="radio"
                           v-model="answers[survey.name]"
                           v-on:keyup.enter="onNextPage"
                           :name="choice.vaule"
                           :value="choice.text"
                         >
-                        
+                        <p class="text_style">${choice.text}</p>
                       </div>
                     </div>
                    
                     <div class="content__hero" v-if="survey.type=='checkbox'">
-                      <div v-for="choice in survey.choices">
+                      <div class="input_group" v-for="choice in survey.choices">
                         <input
+                          class="input_checkbox"
                           type="checkbox"
                           v-model="answers[currentSurvey.name]"
-                          :id="choice.value"
                           :name="choice.value"
                           :value="choice.text"
                         >
+                        <p class="text_style">${choice.text}</p>
                       </div>
                     </div>
                    
                     <div class="content__hero" v-if="survey.type=='dropdown'">
                       <select id="content__hero" :name="survey.name" v-model="answers[survey.name]">
-                        <option v-for='choice in survey.choices'>
+                        <option class="input_option" v-for='choice in survey.choices'>
                           ${choice.text}
                         </option>
                       </select>
                     </div>
                     
                     <div class="content__hero" v-if="survey.type=='boolean'">
-                      <input
-                        type="radio"
-                        v-model="answers[survey.name]"
-                        :value="survey.element.labelTrue"
-
-                      >
-                      <input
-                        type="radio"
-                        v-model="answers[survey.name]"
-                        :value="survey.element.labelFalse"
-                      >
-                      
+                      <div class="input_group">
+                        <input
+                          class="input_radio"
+                          type="radio"
+                          v-model="answers[survey.name]"
+                          :value="survey.element.labelTrue"
+                        >
+                        <p class="text_style">${survey.element.labelTrue}</p>
+                        <input
+                          class="input_radio"
+                          type="radio"
+                          v-model="answers[survey.name]"
+                          :value="survey.element.labelFalse"
+                        >
+                        <p class="text_style">${survey.element.labelFalse}</p>
+                      </div>
                     </div>
                    
                     <div class="content__hero" v-if="survey.type=='date'">
                       <input
+                        class="input-date"
                         type="date"
                         v-model="answers[survey.name]"
                       >
@@ -237,31 +244,37 @@
             return {
               storeId: 'fcccf9c8-a0b0-45a4-81e2-2acf7a55b1a6',
               colors: [
-                '#E56C3C',
-                '#A4CBBD',
-                '#B99880',
-                '#325645',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E',
-                '#1E1D1E'
+              '#E56C3C',
+              '#E56C3C',
+              '#E56C3C',
+              '#E56C3C',
+              '#E56C3C',
+              '#E56C3C',
+              '#E56C3C',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#A4CBBD',
+              '#B99880',
+              '#B99880',
+              '#B99880',
+              '#325645',
+              '#325645',
+              '#325645',
+              '#325645',
+              '#325645',
+              '#325645',
+              '#325645',
+              '#325645',
+              '#325645',
+              '#325645',
+              '#325645',
               ],
               currentPage: -1,
               surveys: [],
