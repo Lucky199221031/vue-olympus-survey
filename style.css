@@ -1,0 +1,455 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  color: white;
+}
+
+.comingsoon {
+  font-family: commuters-sans,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.comingsoon .spacer {
+  flex: 1;
+}
+
+.comingsoon .content__landing button {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.8em;
+  padding: 0 1em;
+  border-radius: 2em;
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+}
+
+.comingsoon input {
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+.comingsoon .banner {
+  position: relative;
+  height: 4em;
+  background-color: #3F3F3F;
+  font-weight: 300;
+  color: #FFFFFF;
+  line-height: 4em;
+  overflow: hidden;
+}
+
+.comingsoon .banner__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+
+.comingsoon .banner__content > div {
+  display: flex;
+  animation: scrollText 40s infinite linear;
+}
+
+.comingsoon .banner span.banner__block {
+  font-size: 2em;
+}
+
+.comingsoon .page {
+  position: relative;
+}
+
+.comingsoon header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 10em;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 3em;
+}
+
+.comingsoon .header__logo {
+  width: auto;
+  height: 1.75em;
+}
+
+.comingsoon .header__textitem {
+  min-width: 4em;
+  margin-left: 1em;
+  text-align: right;
+  color: #FFFFFF;
+  font-size: 1.75em;
+  font-weight: 600;
+}
+
+.comingsoon .header__user {
+  width: 3em;
+  height: 3em;
+  margin-left: 1em;
+}
+
+.comingsoon .content {
+  position: relative;
+  background-color: #1E1D1E;
+  height: calc(100vmin - 6em);
+  overflow: visible;
+  transition: background-color 0.25s;
+}
+
+.comingsoon .content__landing {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comingsoon .content__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.comingsoon .content__mountain {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 50%);
+}
+
+.comingsoon .content__logo {
+  position: absolute;
+  width: 25vw;
+  height: auto;
+  right: -3.5%;
+  top: 45%;
+  transform: translate(0, -50%);
+}
+
+.comingsoon .content__journey {
+  height: 64%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.comingsoon .content__hero {
+  max-width: 81em;
+  margin-bottom: 3.5em;
+}
+
+.comingsoon .content__hero span {
+  font-size: 6.4em;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.comingsoon .content__hero input {
+  font-size: 4em;
+  color: #FFFFFF;
+  width: 11em;
+}
+
+.comingsoon .content__hero input::placeholder {
+  font-family: commuters-sans,sans-serif;
+  /* font-size: 0.5em; */
+  font-weight: 300;
+  color: rgba(215, 212, 209, 0.36);
+}
+
+.comingsoon .content__journey button {
+  color: #D96B3B;
+  border-color: #D96B3B;
+}
+
+.comingsoon .content__quote {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  color: #FFFFFF;
+  padding-top: 2em;
+  max-width: 22em;
+}
+
+.comingsoon .content__learn {
+  color: #97BEB0;
+  border-color: #97BEB0;
+  transform: translateY(50%);
+}
+
+.comingsoon .content__main {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.comingsoon .content__main .journey__title {
+  font-size: 2em;
+  color: white;
+  position: absolute;
+  left: calc(50% - 20em);
+  top: 20%;
+}
+
+.comingsoon .content__main .journey__description {
+  font-size: 2em;
+  color: white;
+  position: absolute;
+  left: calc(50% - 20em);
+  top: 40%;
+}
+
+.comingsoon .vueperslides {
+  min-width: 81em;
+  height: 100%;
+}
+
+.comingsoon .vueperslides .content__hero {
+  width: 100%;
+}
+
+.comingsoon .vueperslides .content__hero input {
+  width: 100%;
+}
+
+.comingsoon .vueperslides__arrow {
+  font-size: inherit;
+  width: 4em;
+  height: 4em;
+}
+
+.comingsoon .vueperslides__arrow:disabled {
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.comingsoon .vueperslides__arrow--prev {
+  left: -4em;
+}
+
+.comingsoon .vueperslides__arrow--next {
+  right: -4em;
+  transform: scaleX(-1);
+}
+
+.comingsoon .vueperslides__arrow svg {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.comingsoon .vueperslide .content__journey {
+  height: 100%;
+  justify-content: center;
+}
+
+.comingsoon .vueperslide .content__hero {
+  margin-bottom: 0;
+}
+
+.comingsoon .vueperslides__bullets {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: 81em;
+  display: flex;
+  gap: 0.5em;
+}
+
+.comingsoon .vueperslides__bullets::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+
+.comingsoon .vueperslides__bullets > * {
+  flex: 1;
+  display: block;
+  position: relative;
+  height: 2em;
+  border: 1px solid white;
+  transition: opacity 0.25s;
+}
+
+.comingsoon .vueperslides__bullets > .active {
+  flex: 0.5;
+}
+
+.comingsoon .vueperslides__bullets > .active ~ * {
+  opacity: 0;
+}
+
+.comingsoon footer {
+  background-color: #1E1D1E;
+  padding: 8.625em 5.375em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comingsoon footer p,
+.comingsoon footer span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #FFFFFF;
+  max-width: 19em;
+}
+
+.comingsoon .footer__signup {
+  display: flex;
+  margin-top: 0.5em;
+  margin-bottom: 3em;
+}
+
+.comingsoon .footer__signup input {
+  border: none;
+  background-color: rgba(188, 188, 188, 0.17);
+  font-family: inherit;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #FFFFFF;
+  line-height: 2.5em;
+  margin-right: 1em;
+  padding: 0 1em;
+  width: 19em;
+}
+
+.comingsoon .footer__signup button {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #3F3F3F;
+  line-height: 2.5em;
+  padding: 0 1em;
+  border-radius: 2em;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+.comingsoon .footer__social {
+  display: flex;
+  align-items: center;
+}
+
+.comingsoon .footer__social img {
+  width: 2.2em;
+  height: auto;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.comingsoon .footer__actions {
+  display: flex;
+  align-items: center;
+}
+
+.comingsoon .footer__actions img {
+  width: 10em;
+  height: auto;
+  margin-right: 2em;
+}
+
+.comingsoon .footer__action {
+  line-height: 3;
+}
+
+@keyframes scrollText {
+  from   { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+/* @media only screen and (max-width: 1920px) {
+  .comingsoon {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .comingsoon {
+    font-size: 10px;
+  }
+} */
+
+@media only screen and (max-width: 1280px) {
+  .comingsoon {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .comingsoon {
+    font-size: 7px;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (orientation: portrait) {
+  .comingsoon .content {
+    height: 80vh;
+  }
+
+  .comingsoon .content__mountain {
+    width: 140%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .comingsoon .content__hero {
+    font-size: 6px;
+    text-align: center;
+  }
+
+  .comingsoon .content__hero input {
+    width: 4em;
+  }
+
+  .comingsoon footer {
+    flex-direction: column;
+  }
+}

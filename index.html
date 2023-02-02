@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <meta property="og:site_name" content="infinitewell">
+    <meta property="og:url" content="https://infinitewell.myshopify.com/">
+    <meta property="og:title" content="infinitewell">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="infinitewell"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="infinitewell">
+    <meta name="twitter:description" content="infinitewell">
+    <title>Coming Soon</title>
+    <script src="https://unpkg.com/vue@3.2.45/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/iqz6bxy.css">
+    <script src="https://unpkg.com/vueperslides"></script>
+    <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="comingsoon">
+      <div class="banner">
+        <div class="banner__content">
+          <div>
+            <span class="banner__block">
+              <span>&nbsp;●&nbsp;</span>
+              <span>CURIOSITY</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>YOUR NEXT CHAPTER</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>GRIT</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>COMING SOON: YOUR NEXT CHAPTER</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>VITALITY</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>YOUR NEXT CHAPTER</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>COMMUNITY</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>YOUR NEXT CHAPTER</span>
+            </span>
+            <span class="banner__block">
+              <span>&nbsp;●&nbsp;</span>
+              <span>CURIOSITY</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>YOUR NEXT CHAPTER</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>GRIT</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>COMING SOON: YOUR NEXT CHAPTER</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>VITALITY</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>YOUR NEXT CHAPTER</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>COMMUNITY</span>
+              <span>&nbsp;●&nbsp;</span>
+              <span>YOUR NEXT CHAPTER</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <header class="header">
+          <img v-if="currentPage < 0" class="header__logo" src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/logo-text.png" alt="logo">
+          <img v-else class="header__logo header__logo--white" src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/logo-text-white.png" alt="logo">
+          <div class="spacer"></div>
+          <div class="header__textitem">LEARN</div>
+          <div class="header__textitem">HERO</div>
+          <img class="header__user" src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/user.png" alt="user">
+        </header>
+        <div class="content" :style="currentPage < 0 ? '' : `background-color: ${colors[currentPage]}`">
+          <div class="content__bg">
+            <img class="content__mountain" src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/mountain.png" alt="bg">
+            <img v-if="currentPage < 0" class="content__logo" src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/logo-image.png" alt="logo">
+          </div>
+          <div v-if="currentPage < 0" class="content__landing">
+            <div class="content__journey">
+              <div class="content__hero">
+                <input type="text" placeholder="(First Name)">
+                <span>IS THE HERO OF THIS STORY.</span>
+              </div>
+              <button type="button" @click="startSurvey">CREATE YOUR JOURNEY</button>
+            </div>
+            <div class="content__quote">
+              <i>“HEALTH IS A MATTER OF CHOICE, NOT A MYSTERY OF CHANCE”</i><br>
+              - ARISTOTLE
+            </div>
+            <button type="button" class="content__learn">LEARN MORE</button>
+          </div>
+          <div v-else class="content__main">
+            <vueper-slides
+              ref="surveySlides"
+              @slide="onChangeSlide($event)"
+              fixed-height="100%"
+              :arrows="false"
+              :touchable="false"
+              :disable-arrows-on-edges="true"
+              :init-slide="lastAnswerIndex + 1"
+              :transition-speed="transitionSpeed"
+            >
+              <vueper-slide v-for="survey in surveys">
+                <template #content>
+                  <h3>${answers[currentSurvey.name]}</h3>
+                  <h3>${currentSurvey.name}</h3>
+                  <div class="content__journey">
+                    <p class="journey__title">${survey.title}</p>
+                    <p class="journey__description" v-if="survey.description">${survey.description}</p>
+                    <div class="content__hero" v-if="survey.type=='text'">
+                      <input
+                        type="text"
+                        :placeholder="survey.placeholder"
+                        v-model="answers[survey.name]"
+                        v-on:keyup.enter="onNextPage"
+                      >
+                    </div>
+                    
+                    <div class="content__hero" v-if="survey.type=='radiogroup'">
+                      <div v-for="choice in survey.choices">
+                        <input
+                          type="radio"
+                          v-model="answers[survey.name]"
+                          v-on:keyup.enter="onNextPage"
+                          :name="choice.vaule"
+                          :value="choice.text"
+                        >
+                        
+                      </div>
+                    </div>
+                   
+                    <div class="content__hero" v-if="survey.type=='checkbox'">
+                      <div v-for="choice in survey.choices">
+                        <input
+                          type="checkbox"
+                          v-model="answers[currentSurvey.name]"
+                          :id="choice.value"
+                          :name="choice.value"
+                          :value="choice.text"
+                        >
+                      </div>
+                    </div>
+                   
+                    <div class="content__hero" v-if="survey.type=='dropdown'">
+                      <select id="content__hero" :name="survey.name" v-model="answers[survey.name]">
+                        <option v-for='choice in survey.choices'>
+                          ${choice.text}
+                        </option>
+                      </select>
+                    </div>
+                    
+                    <div class="content__hero" v-if="survey.type=='boolean'">
+                      <input
+                        type="radio"
+                        v-model="answers[survey.name]"
+                        :value="survey.element.labelTrue"
+
+                      >
+                      <input
+                        type="radio"
+                        v-model="answers[survey.name]"
+                        :value="survey.element.labelFalse"
+                      >
+                      
+                    </div>
+                   
+                    <div class="content__hero" v-if="survey.type=='date'">
+                      <input
+                        type="date"
+                        v-model="answers[survey.name]"
+                      >
+                    </div>
+                  </div>
+                </template>
+              </vueper-slide>
+              <template #bullets="{ bulletIndexes, currentSlide }">
+                <div
+                  v-for="(slideIndex, i) in bulletIndexes" :key="i"
+                  class="slider__indicator"
+                  :class="{ 'active': currentSlide === slideIndex }"
+                  :style="`background-color: ${colors[slideIndex]}`"
+                ></div>
+              </template>
+            </vueper-slides>
+            <button
+              class="vueperslides__arrow vueperslides__arrow--prev"
+              type="button"
+              :disabled="!canGoPrev"
+              @click="onPrevPage"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="59.202" height="59.202" viewBox="0 0 59.202 59.202"><g id="Group_37" data-name="Group 37" transform="translate(-101.798 -2665.25)"><path id="Path_39" data-name="Path 39" d="M138.639,2708.888l-14.481-14.06,14.481-14.013" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"></path><circle id="Ellipse_14" data-name="Ellipse 14" cx="28.601" cy="28.601" r="28.601" transform="translate(102.798 2666.25)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"></circle></g></svg>
+            </button>
+            <button
+              class="vueperslides__arrow vueperslides__arrow--next"
+              type="button"
+              :disabled="!canGoNext"
+              @click="onNextPage"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="59.202" height="59.202" viewBox="0 0 59.202 59.202"><g id="Group_37" data-name="Group 37" transform="translate(-101.798 -2665.25)"><path id="Path_39" data-name="Path 39" d="M138.639,2708.888l-14.481-14.06,14.481-14.013" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"></path><circle id="Ellipse_14" data-name="Ellipse 14" cx="28.601" cy="28.601" r="28.601" transform="translate(102.798 2666.25)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"></circle></g></svg>
+            </button>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="footer__join">
+            <p>SIGN UP AND GET EARLY ACCESS</p>
+            <div class="footer__signup">
+              <input type="email" placeholder="Email">
+              <button type="button">SUBMIT</button>
+            </div>
+            <div class="footer__social">
+              <img src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/instagram.png" alt="instagram">
+              <img src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/tiktok.png" alt="tiktok">
+              <img src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/youtube.png" alt="youtube">
+            </div>
+            <p>JOIN OTHER PEOPLE JUST LIKE YOU WHO ARE INFINITE WELL</p>
+          </div>
+          <div class="footer__actions">
+            <img src="https://cdn.shopify.com/s/files/1/0695/3330/3079/files/logo-image.png" alt="logo">
+            <div>
+              <p class="footer__action">CONTACT US</p>
+              <p class="footer__action">PRIVACY POLICY</p>
+              <p class="footer__action">TERMS OF SERVICE</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      if (document.querySelector('.comingsoon')) {
+        const { VueperSlides, VueperSlide } = vueperslides
+        Vue.createApp({
+          delimiters: ['${', '}'],
+          data() {
+            return {
+              storeId: 'fcccf9c8-a0b0-45a4-81e2-2acf7a55b1a6',
+              colors: [
+                '#E56C3C',
+                '#A4CBBD',
+                '#B99880',
+                '#325645',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E',
+                '#1E1D1E'
+              ],
+              currentPage: -1,
+              surveys: [],
+              answers: {"question5": "notyet"},
+              lastAnswerIndex: 0,
+              transitionSpeed: 400,
+              health_goal_prevention: [],
+            }
+          },
+          async created() {
+            try {
+              const [surveyData, answersData] = await Promise.all([
+                axios.get(`https://survey.olympio.co/api/survey/${this.storeId}`),
+                axios.get(`https://survey.olympio.co/api/survey/${this.storeId}/${this.userId}/answers`)
+              ])
+              const { data: { survey: { pages } } } = surveyData
+              console.log('surveyData', surveyData)
+              this.surveys = pages.map(page => ({
+                name: page.elements[0].name,
+                title: page.elements[0].title ? page.elements[0].title : page.title,
+                description: page.elements[0].description ? page.elements[0].description : page.description,
+                type: page.elements[0].inputType == 'date' ? 'date' : page.elements[0].type,
+                placeholder: page.elements[0].placeholder || page.elements[0].name,
+                choices: page.elements[0].choices,
+                element: page.elements[0]
+              }))
+              console.log(this.surveys)
+              if (answersData) {
+                const { data: { surveys: { [this.storeId]: { last, answers } } } } = answersData
+                answers['question5'] = 'notyet'
+                answers['question6'] = 'notyet'
+                answers['question8'] = 'notyet'
+                answers['question9'] = 'notyet'
+                answers['question10'] = 'notyet'
+                if (!answers['health_goal_prevention']) {
+                  answers['health_goal_prevention'] = []
+                }
+                if (!answers['question1']) {
+                  answers['question1'] = []
+                }
+                if (!answers['health_struggles']) {
+                  answers['health_struggles'] = []
+                }
+                if (!answers['question4']) {
+                  answers['question4'] = []
+                }
+                if (!answers['supplements_tried']) {
+                  answers['supplements_tried'] = []
+                }
+                if (!answers['activities']) {
+                  answers['activities'] = []
+                }
+                if (!answers['health_trackers']) {
+                  answers['health_trackers'] = []
+                }
+                if (!answers['obstacles']) {
+                  answers['obstacles'] = []
+                }
+                if (!answers['question2']) {
+                  answers['question2'] = []
+                }
+                this.answers = answers
+                console.log('answers', answers)
+                this.lastAnswerIndex = this.surveys.findIndex(({ name }) => name === last)
+              }
+            } catch (e) {
+              console.log(e)
+            }
+          },
+          computed: {
+            userId() {
+              let userId = localStorage.getItem('userId')
+              if (!userId) {
+                userId = crypto.getRandomValues(new Uint8Array(21)).reduce(((t,e)=>t+=(e&=63)<36?e.toString(36):e<62?(e-26).toString(36).toUpperCase():e>62?"-":"_"),"")
+                localStorage.setItem('userId', userId)
+              }
+              return userId
+            },
+            currentSurvey() {
+              return this.surveys[this.currentPage]
+            },
+            canNavigate() {
+              const value = this.answers[this.currentSurvey.name]
+              console.log('canNavigate(), currentSurvey.name', this.currentSurvey.name)
+              console.log('canNavigate(), answers[currentSurvey.name]', value)
+              return !!value
+            },
+            canGoPrev() {
+              return this.currentPage > 0
+            },
+            canGoNext() {
+              console.log('surveys length', this.surveys.length)
+              return this.canNavigate && this.currentPage < this.surveys.length
+            }
+          },
+          methods: {
+            focusInput() {
+              document.querySelectorAll('.comingsoon input').forEach(e => e.blur())
+              setTimeout(() => {
+                const elInput = document.querySelector(`.comingsoon .vueperslide:nth-child(${this.currentPage + 1}) input`)
+                elInput?.focus()
+              }, this.transitionSpeed)
+            },
+            startSurvey() {
+              if (this.surveys.length > 0) {
+                this.onChangeSlide({ currentSlide: { index: this.lastAnswerIndex }})
+              }
+            },
+            onPrevPage() {
+              if (this.canGoPrev)
+                this.$refs.surveySlides.previous()
+            },
+            onNextPage() {
+              if (this.canGoNext) {
+                axios.post(`https://survey.olympio.co/api/survey/answerQuestion`, {
+                  surveyId: this.storeId,
+                  userId: this.userId,
+                  question: this.currentSurvey.name,
+                  answer: this.answers[this.currentSurvey.name]
+                })
+                this.$refs.surveySlides.next()
+              }
+            },
+            onChangeSlide({ currentSlide }) {
+              this.currentPage = currentSlide.index
+              this.focusInput()
+            },
+          },
+          components: { VueperSlides, VueperSlide }
+        }).mount('.comingsoon')
+      }
+    </script>
+  </body>
+</html>
