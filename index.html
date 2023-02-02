@@ -105,11 +105,14 @@
             >
               <vueper-slide v-for="survey in surveys">
                 <template #content>
-                  <h3>${answers[currentSurvey.name]}</h3>
-                  <h3>${currentSurvey.name}</h3>
-                  <div class="content__journey">
+                  <!-- <h3>${answers[currentSurvey.name]}</h3> -->
+                  <!-- <h3>${currentSurvey.name}</h3> -->
+
+                  
+                  <div :class="this.isNotChapter? 'content__journey' : 'content__journey' ">
+                    <!-- <div :class="this.isNotChapter? 'content__journey' : 'content__landing' "> -->
                     <p class="journey__title">${survey.title}</p>
-                    <p class="journey__description" v-if="survey.description">${survey.description}</p>
+                    <p class="journey__description" v-if="this.isNotChapter && survey.description">${survey.description}</p>
                     <div class="content__hero" v-if="survey.type=='text'">
                       <input
                         type="text"
@@ -117,6 +120,52 @@
                         v-model="answers[survey.name]"
                         v-on:keyup.enter="onNextPage"
                       >
+                    </div>
+
+                    <div class="" v-if="survey.type=='html'">
+                      <div v-if="currentPage == 1" class="content__landing">
+                        <div class="content__journey">
+                          <div class="content__hero">
+                            <span>YOUR STORY SO FAR</span>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div v-if="currentPage == 7" class="content__landing">
+                        <div class="content__journey">
+                          <div class="content__hero">
+                            <span>WHERE ARE YOU NOW</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                      <div v-if="currentPage == 17" class="content__landing">
+                        <div class="content__journey">
+                          <div class="content__hero">
+                            <span>A NEW YOU IS CALLING</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                      <div v-if="currentPage == 20" class="content__landing">
+                        <div class="content__journey">
+                          <div class="content__hero">
+                            <span>PREPARAING FOR THE FUTURE</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                      <div v-if="currentPage == 23" class="content__landing">
+                        <div class="content__journey">
+                          <div class="content__hero">
+                            <span>...ARE UP TO YOU</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     
                     <div class="content__hero" v-if="survey.type=='radiogroup'">
@@ -342,6 +391,42 @@
               }
             } catch (e) {
               console.log(e)
+
+              answers = {}
+              answers['question5'] = 'notyet'
+              answers['question6'] = 'notyet'
+              answers['question8'] = 'notyet'
+              answers['question9'] = 'notyet'
+              answers['question10'] = 'notyet'
+              if (!answers['health_goal_prevention']) {
+                answers['health_goal_prevention'] = []
+              }
+              if (!answers['question1']) {
+                answers['question1'] = []
+              }
+              if (!answers['health_struggles']) {
+                answers['health_struggles'] = []
+              }
+              if (!answers['question4']) {
+                answers['question4'] = []
+              }
+              if (!answers['supplements_tried']) {
+                answers['supplements_tried'] = []
+              }
+              if (!answers['activities']) {
+                answers['activities'] = []
+              }
+              if (!answers['health_trackers']) {
+                answers['health_trackers'] = []
+              }
+              if (!answers['obstacles']) {
+                answers['obstacles'] = []
+              }
+              if (!answers['question2']) {
+                answers['question2'] = []
+              }
+              this.answers = answers
+              console.log('answers', answers)
             }
           },
           computed: {
@@ -358,6 +443,12 @@
             },
             canNavigate() {
               const value = this.answers[this.currentSurvey.name]
+              
+              // Check empty array of checkboxes
+              console.log(Object.keys(value).length === 0 && value.constructor === Array)
+              if (Object.keys(value).length === 0 && value.constructor === Array) {
+                return false
+              }
               console.log('canNavigate(), currentSurvey.name', this.currentSurvey.name)
               console.log('canNavigate(), answers[currentSurvey.name]', value)
               return !!value
@@ -368,6 +459,10 @@
             canGoNext() {
               console.log('surveys length', this.surveys.length)
               return this.canNavigate && this.currentPage < this.surveys.length
+            },
+            isNotChapter() {
+              console.log('isNotChapter:', [0,2,3,4,5,6,8,9,10,11,12,13,14,15,17,18,19,21,22,24,25].includes(this.currentPage))
+              return ([0,2,3,4,5,6,8,9,10,11,12,13,14,15,17,18,19,21,22,24,25].includes(this.currentPage))
             }
           },
           methods: {

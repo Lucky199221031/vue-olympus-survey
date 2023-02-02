@@ -318,7 +318,7 @@ h3 {
   transform: translate(-50%, -50%);
   width: 81em;
   display: flex;
-  gap: 0.5em;
+  /* gap: 0.5em; */
 }
 
 .comingsoon .vueperslides__bullets::before {
@@ -337,7 +337,7 @@ h3 {
   display: block;
   position: relative;
   height: 2em;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   transition: opacity 0.25s;
 }
 
