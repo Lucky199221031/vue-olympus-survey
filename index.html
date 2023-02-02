@@ -445,6 +445,9 @@
               const value = this.answers[this.currentSurvey.name]
               
               // Check empty array of checkboxes
+              console.log(value)
+              console.log(typeof(value))
+              if (value == undefined) return false
               console.log(Object.keys(value).length === 0 && value.constructor === Array)
               if (Object.keys(value).length === 0 && value.constructor === Array) {
                 return false
