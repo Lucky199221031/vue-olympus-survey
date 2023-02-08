@@ -1,0 +1,830 @@
+{
+      "id": "fcccf9c8-a0b0-45a4-81e2-2acf7a55b1a6",
+      "name": "Web Onboarding",
+      "survey": {
+          "title": "Web Onboarding",
+          "logoPosition": "right",
+          "pages": [
+              {
+                  "name": "home",
+                  "elements": [
+                      {
+                          "type": "text",
+                          "name": "name",
+                          "title": "This is your story",
+                          "placeholder": "Your name"
+                      }
+                  ],
+                  "title": "Home Page"
+              },
+              {
+                  "name": "page1",
+                  "elements": [
+                      {
+                          "type": "html",
+                          "name": "question5"
+                      }
+                  ],
+                  "title": "Chapter I",
+                  "description": "We want to understand what brought you to this moment.\n\n(Put your favorite song on real quick. We�ll be done before it�s over.)"
+              },
+              {
+                  "name": "page2",
+                  "elements": [
+                      {
+                          "type": "text",
+                          "name": "email",
+                          "title": "What is your email? (We will use this to send you your answers and insights later. These will be fun to look back on.)",
+                          "description": "We have a free gift you won�t want to miss at the end of the survey",
+                          "inputType": "email",
+                          "inputMask": "email"
+                      }
+                  ],
+                  "title": "Page 2"
+              },
+              {
+                  "name": "page4",
+                  "elements": [
+                      {
+                          "type": "radiogroup",
+                          "name": "shape",
+                          "title": "When were you in the best shape of your life?",
+                          "choices": [
+                              {
+                                  "value": "now",
+                                  "text": "I'm in the best shape of my life right now"
+                              },
+                              {
+                                  "value": "year_ago",
+                                  "text": "A year ago"
+                              },
+                              {
+                                  "value": "couple_years_ago",
+                                  "text": "A couple years ago"
+                              },
+                              {
+                                  "value": "five_years_ago",
+                                  "text": "5 years ago"
+                              },
+                              {
+                                  "value": "ten_years_ago",
+                                  "text": "10 years ago"
+                              },
+                              {
+                                  "value": "twenty_years_ago",
+                                  "text": "20+ years ago"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Chapter I"
+              },
+              {
+                  "name": "page5",
+                  "elements": [
+                      {
+                          "type": "radiogroup",
+                          "name": "supplementation_experience",
+                          "title": "What is your experience with supplements?",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "None at all"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "I've taken multivitamins before"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "I've tried protein powder or creatine"
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "I take a handful of supplements daily"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "I take the basics (fish oil, magnesium)"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "I read the occasional article, or listen to influencer podcasts"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "I regularly read peer reviewed research"
+                              },
+                              "Item 8"
+                          ]
+                      }
+                  ],
+                  "title": "Page 5"
+              },
+              {
+                  "name": "page6",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "health_goal_prevention",
+                          "title": "What has prevented  you from realizing your health goals in the past?",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "Poor nutrition"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "Poor exercise habits"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "Lack of discipline"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "Peer pressure"
+                              },
+                              {
+                                  "value": "Item 8",
+                                  "text": "Lack of a system"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "Boredom"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "Lack of results"
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "Lack of wellness knowledge"
+                              },
+                              {
+                                  "value": "Item 9",
+                                  "text": "Lack of community or accountability partners"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 6"
+              },
+              {
+                  "name": "page20",
+                  "elements": [
+                      {
+                          "type": "html",
+                          "name": "question6"
+                      }
+                  ],
+                  "title": "Chapter 2: Where Are You NOW?"
+              },
+              {
+                  "name": "page7",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "question1",
+                          "title": "Do you use any fitness tracking apps?",
+                          "choices": [
+                              {
+                                  "value": "strava",
+                                  "text": "Strava"
+                              },
+                              {
+                                  "value": "mapmyrun",
+                                  "text": "Mapmyrun"
+                              },
+                              {
+                                  "value": "myfitnesspal",
+                                  "text": "Myfitnesspal"
+                              },
+                              {
+                                  "value": "strong_app",
+                                  "text": "Strong App"
+                              },
+                              {
+                                  "value": "nike_running",
+                                  "text": "Nike Running App"
+                              },
+                              {
+                                  "value": "apple_workout",
+                                  "text": "Apple Workout App"
+                              },
+                              {
+                                  "value": "garmin_connect",
+                                  "text": "Garmin Connect"
+                              },
+                              {
+                                  "value": "google_health",
+                                  "text": "Google Health"
+                              }
+                          ]
+                      },
+                      {
+                          "type": "radiogroup",
+                          "name": "supplements_taken",
+                          "title": "Are you currently taking any daily supplements?",
+                          "choices": [
+                              "0",
+                              "1-3",
+                              "3-5",
+                              "5-10",
+                              "10-20",
+                              {
+                                  "value": "20-plus",
+                                  "text": "20+"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 8"
+              },
+              {
+                  "name": "page8",
+                  "elements": [
+                      {
+                          "type": "boolean",
+                          "name": "powdered_supplements",
+                          "title": "Do you take any powdered supplements? (Protein, collagen, pre workout, anything you dissolve into a liquid and drink)question2",
+                          "labelTrue": "Yes",
+                          "labelFalse": "No"
+                      }
+                  ],
+                  "title": "Page 9"
+              },
+              {
+                  "name": "page9",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "health_struggles",
+                          "title": "Do you struggle with any of these areas of health/wellness?",
+                          "choices": [
+                              {
+                                  "value": "joint_pain",
+                                  "text": "Joint pain"
+                              },
+                              {
+                                  "value": "excesssive_muscle_soreness",
+                                  "text": "Excessive muscle soreness"
+                              },
+                              {
+                                  "value": "loss_of_focus",
+                                  "text": "Loss of focus"
+                              },
+                              {
+                                  "value": "stubborn_fat",
+                                  "text": "Stubborn fat"
+                              },
+                              {
+                                  "value": "low_energy_level",
+                                  "text": "Low energy levels"
+                              },
+                              {
+                                  "value": "burnout",
+                                  "text": "Burnout"
+                              },
+                              {
+                                  "value": "stress",
+                                  "text": "Stress"
+                              },
+                              {
+                                  "value": "irritability",
+                                  "text": "Irritability"
+                              },
+                              {
+                                  "value": "lack_of_motivation",
+                                  "text": "Lack of motivation"
+                              },
+                              {
+                                  "value": "poor_sleep",
+                                  "text": "Poor sleep"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 10"
+              },
+              {
+                  "name": "page10",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "question4",
+                          "title": "Have you tried any of the following supplements?",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "Resveratrol"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "Ashwagandha"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "Curcumin"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "Magnesium"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "Collagen"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "Ketones"
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "Creatine"
+                              },
+                              {
+                                  "value": "Item 8",
+                                  "text": "Fish Oil"
+                              },
+                              {
+                                  "value": "Item 9",
+                                  "text": "Beef Organs"
+                              },
+                              {
+                                  "value": "Item 10",
+                                  "text": "Probiotics"
+                              },
+                              {
+                                  "value": "Item 11",
+                                  "text": "SARMS and Peptides"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 11"
+              },
+              {
+                  "name": "page11",
+                  "elements": [
+                      {
+                          "type": "radiogroup",
+                          "name": "supplements_tried",
+                          "title": "How many times a week, on average, do you exercise?",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "Rarely"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "2-5 times"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "7"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "12+"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "My job is to exercise"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 12"
+              },
+              {
+                  "name": "page12",
+                  "elements": [
+                      {
+                          "type": "radiogroup",
+                          "name": "sleep",
+                          "title": "How many hours of sleep do you sleep a night (on average)?",
+                          "choices": [
+                              {
+                                  "value": "4-less",
+                                  "text": "4 or less hours"
+                              },
+                              {
+                                  "value": "5-6",
+                                  "text": "5-6 hours"
+                              },
+                              {
+                                  "value": "6-7",
+                                  "text": "6-7 hours"
+                              },
+                              {
+                                  "value": "7-8",
+                                  "text": "7-8 hours"
+                              },
+                              {
+                                  "value": "8-9",
+                                  "text": "8-9 hours"
+                              },
+                              {
+                                  "value": "9-plus",
+                                  "text": "9+ hours"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 13"
+              },
+              {
+                  "name": "page13",
+                  "elements": [
+                      {
+                          "type": "radiogroup",
+                          "name": "nutrition",
+                          "title": "What best represents your nutrition?",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "I eat mostly processed foods"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "I cook most of my meals but they could be healthier"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "I eat according to my macros"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "I eat mostly whole foods"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "Keto"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "Animal based"
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "Paleo"
+                              },
+                              {
+                                  "value": "Item 9",
+                                  "text": "Vegan"
+                              },
+                              {
+                                  "value": "Item 12",
+                                  "text": "Pescaterian"
+                              },
+                              {
+                                  "value": "Item 8",
+                                  "text": "Vegetarian"
+                              },
+                              {
+                                  "value": "Item 10",
+                                  "text": "Omnivore"
+                              },
+                              {
+                                  "value": "Item 11",
+                                  "text": "Carnivore"
+                              },
+                              "Item 13"
+                          ],
+                          "showOtherItem": true
+                      }
+                  ],
+                  "title": "Page 14"
+              },
+              {
+                  "name": "page14",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "activities",
+                          "title": "What kinds of activities do you participate in? (select all that apply)",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "Yoga"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "Pilates"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "Calisthenics"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "Strength Training"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "Running"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "Cycling"
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "Endurance"
+                              },
+                              {
+                                  "value": "Item 8",
+                                  "text": "Organized Sports"
+                              },
+                              {
+                                  "value": "Item 9",
+                                  "text": "HIIT"
+                              },
+                              {
+                                  "value": "Item 10",
+                                  "text": "Swimming"
+                              },
+                              {
+                                  "value": "Item 11",
+                                  "text": "Hiking"
+                              }
+                          ],
+                          "showOtherItem": true
+                      }
+                  ],
+                  "title": "Page 15"
+              },
+              {
+                  "name": "page15",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "health_trackers",
+                          "title": "Do you use any of the following health trackers? This is any worn device that collects data about your health. (Heart rate, skin temperature, caloric burn, sleep recovery status, HRV)",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "Garmin"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "Apple Watch"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "Whoop"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "Oura Ring"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "Fitbit"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "Samsung"
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "Polar"
+                              },
+                              {
+                                  "value": "Item 8",
+                                  "text": "Suunto"
+                              },
+                              {
+                                  "value": "Item 9",
+                                  "text": "Coros"
+                              },
+                              {
+                                  "value": "Item 10",
+                                  "text": "Nordic"
+                              },
+                              {
+                                  "value": "Item 11",
+                                  "text": "Peloton"
+                              },
+                              {
+                                  "value": "Item 12",
+                                  "text": "8 sleep"
+                              },
+                              {
+                                  "value": "Item 13",
+                                  "text": "Biostrap"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 16"
+              },
+              {
+                  "name": "page16",
+                  "elements": [
+                      {
+                          "type": "html",
+                          "name": "question8"
+                      }
+                  ],
+                  "title": "Chapter 3: A new you is calling"
+              },
+              {
+                  "name": "page21",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "question7",
+                          "title": "What factors drive you to chase your health goals?",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "I want to own the room"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "I want to feel sexy"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "I want to enjoy everyday life more"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "I want to feel well rested"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "I want to perform at a high athletic level"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "I want to do pushups with my grandchildren on my back"
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "I want to know what it feels like to be stress free"
+                              },
+                              {
+                                  "value": "Item 8",
+                                  "text": "I want to master myself"
+                              },
+                              {
+                                  "value": "Item 9",
+                                  "text": "I want to improve my relationships with others"
+                              },
+                              {
+                                  "value": "Item 10",
+                                  "text": "I want to pursue a deeper sense of meaning"
+                              },
+                              {
+                                  "value": "Item 11",
+                                  "text": "I want to be heroically resilient"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 18"
+              },
+              {
+                  "name": "page17",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "obstacles",
+                          "title": "What are the biggest obstacles on your health journey?",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "Lack of consistency"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "Lack of time"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "Lack of knowledge"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "Fear of looking dumb"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "Lack of interest"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "Bad habits resurfacing (binge eating, poor sleep habits, etc."
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "Lack of support"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 19"
+              },
+              {
+                  "name": "page22",
+                  "elements": [
+                      {
+                          "type": "html",
+                          "name": "question9"
+                      }
+                  ],
+                  "title": "Chapter 4: Preparing for the future",
+                  "description": "�The best way to predict the future is to create it� - Abraham Lincoln"
+              },
+              {
+                  "name": "page18",
+                  "elements": [
+                      {
+                          "type": "checkbox",
+                          "name": "question2",
+                          "title": "Which best represent your next health and wellness goals?",
+                          "choices": [
+                              {
+                                  "value": "Item 1",
+                                  "text": "Muscle growth"
+                              },
+                              {
+                                  "value": "Item 2",
+                                  "text": "Increased energy"
+                              },
+                              {
+                                  "value": "Item 3",
+                                  "text": "Body fat reduction"
+                              },
+                              {
+                                  "value": "Item 4",
+                                  "text": "Improved brain"
+                              },
+                              {
+                                  "value": "Item 5",
+                                  "text": "Increased endurance"
+                              },
+                              {
+                                  "value": "Item 6",
+                                  "text": "Increased strength"
+                              },
+                              {
+                                  "value": "Item 7",
+                                  "text": "Better mobility"
+                              },
+                              {
+                                  "value": "Item 8",
+                                  "text": "Improved mental health"
+                              },
+                              {
+                                  "value": "Item 9",
+                                  "text": "Improved physical health"
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Page 21"
+              },
+              {
+                  "name": "page19",
+                  "elements": [
+                      {
+                          "type": "text",
+                          "name": "next_chapter",
+                          "title": "Those are worthy goals to pursue. How exciting!",
+                          "description": "Describe your next Chapter in 4 words or less"
+                      }
+                  ],
+                  "title": "Page 22"
+              },
+              {
+                  "name": "page23",
+                  "elements": [
+                      {
+                          "type": "html",
+                          "name": "question10"
+                      }
+                  ],
+                  "title": "The next Chapters are up to you",
+                  "description": "We have a few ways to increase your chances at success..(And one of them is free ;) )"
+              },
+              {
+                  "name": "phone_number",
+                  "elements": [
+                      {
+                          "type": "text",
+                          "name": "question3",
+                          "title": "Can we get your digits?",
+                          "description": "We�ll text you a link to download the app.",
+                          "inputType": "tel"
+                      }
+                  ],
+                  "title": "Page 24"
+              }
+          ],
+          "showProgressBar": "both"
+      }
+  }
